@@ -16,17 +16,23 @@ driver.maximize_window()
 driver.get("https://peletok-staging.ravtech.co.il")
 wait = WebDriverWait(driver, timeout=20)
 
-elenent = wait.until(ec.element_to_be_clickable(locator=(By.ID, "usernameId"))).send_keys("peletok0")
-# elenent.send_keys("peletok0")
-elenent = wait.until(ec.element_to_be_clickable(locator=(By.ID, "passwordId"))).send_keys("pass0")
-# elenent.send_keys("pass0")
-elenent = wait.until(ec.element_to_be_clickable(locator=(By.ID, "btnLogin"))).click()  #  id = כפתור של התחבר
-# elenent.click()
-elenent = wait.until(ec.element_to_be_clickable(locator=(By.ID, "id94Link"))).click()   #  id = כפתור של סלקום
-# elenent.click()
+elenent = wait.until(ec.element_to_be_clickable(locator=(By.ID, "usernameId")))
+elenent.send_keys("peletok0")
+elenent = wait.until(ec.element_to_be_clickable(locator=(By.ID, "passwordId")))
+elenent.send_keys("pass0")
+elenent = wait.until(ec.element_to_be_clickable(locator=(By.ID, "btnLogin"))) #  id = כפתור של התחבר
+elenent.click()
+elenent = wait.until(ec.element_to_be_clickable(locator=(By.ID, "id94Link")))  #  id = כפתור של סלקום
+elenent.click()
 print("befor")
 
-elenent = wait.until(ec.element_to_be_clickable(locator=(By.CLASS_NAME, "productName")))
+elenent = wait.until(ec.element_to_be_clickable(locator=(By.ID, "manual")))
+# print(elenent.text)
+elenent.click()
 print("after")
-
+elenent = wait.until(ec.element_to_be_clickable(locator=(By.ID, "product-description")))
+elenent.click()
+print("after1 ")
+elenent = wait.until(ec.element_to_be_clickable(locator=(By.CLASS_NAME, "productName")))
 print(elenent.text)
+print("after2")
